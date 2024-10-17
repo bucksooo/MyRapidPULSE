@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Redirect</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Redirect based on user agent
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.prasarana.pulse";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/my/app/myrapid-pulse/id1545938705";
+            } else {
+                // Optional: redirect to a webpage or show a message
+                document.body.innerHTML = "<h1>Please visit this page on your mobile device.</h1>";
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
